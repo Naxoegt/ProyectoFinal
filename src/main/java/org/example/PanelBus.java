@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 class PanelBus extends JPanel {
     ListaDeAsientos listaDeAsientos;
     private int rectangleX = 180;
-    private int rectangleY = 320;
+    private int rectangleY = 10;
     private int rectangleWidth = 750;
     private int rectangleHeight = 200;
 
@@ -28,7 +28,7 @@ class PanelBus extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(1200, 800);
+        return new Dimension(1200, 450);
     }
 
     @Override

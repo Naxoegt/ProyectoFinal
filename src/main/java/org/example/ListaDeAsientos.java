@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaDeAsientos {
+class ListaDeAsientos {
     private List<JButton> asientos = new ArrayList<>();
     private List<Asiento> informacionAsientos = new ArrayList<>();
     private Estado Estado;
@@ -13,7 +13,7 @@ public class ListaDeAsientos {
     public ListaDeAsientos(Estado Estado) {
         this.Estado = Estado;
         int rectangleX = 180;
-        int rectangleY = 320;
+        int rectangleY = 10;
         for (int i = 0; i < 16; i++) {
             Asiento asientoInfo;
             if (i < 8) {
