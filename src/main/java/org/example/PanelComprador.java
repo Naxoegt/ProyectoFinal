@@ -1,6 +1,8 @@
 package org.example;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -9,28 +11,65 @@ class PanelComprador extends JPanel implements Observer {
     private JLabel tagTotal;
     private JLabel tagAsientos;
     private JLabel tagTipo;
+    private JCheckBox equipajeExtraCheckbox;
+    private JButton confirmarButton;
 
     public PanelComprador(Estado Estado){
         this.Estado = Estado;
         tagTotal = new JLabel();
         tagAsientos = new JLabel();
         tagTipo = new JLabel();
+        equipajeExtraCheckbox = new JCheckBox("Equipaje Extra");
+        confirmarButton = new JButton("Confirmar");
 
         setLayout(null);
 
         tagTotal.setBounds(150, 580, 200, 20);
         tagAsientos.setBounds(150, 380, 200, 20);
         tagTipo.setBounds(150, 430, 200, 20);
+        equipajeExtraCheckbox.setBounds(150, 480, 150, 20);
+        confirmarButton.setBounds(150, 530, 100, 30);
+        
+        confirmarButton.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (equipajeExtraCheckbox.isSelected()) {
+            int pesoMaximo = 30;
 
+            String pesoEquipajeText = JOptionPane.showInputDialog(PanelComprador.this, "Ingrese el peso del equipaje extra (kg):");
+            try {
+                int pesoEquipaje = Integer.parseInt(pesoEquipajeText);
+                if (pesoEquipaje <= pesoMaximo) {
+                    // El peso del equipaje extra es válido, realizar las acciones correspondientes
+                    // Por ejemplo, mostrar un mensaje de confirmación
+                    JOptionPane.showMessageDialog(PanelComprador.this, "Equipaje extra confirmado. Peso: " + pesoEquipaje + " kg.");
+                } else {
+                    // El peso del equipaje extra excede el límite permitido
+                    JOptionPane.showMessageDialog(PanelComprador.this, "El peso del equipaje extra excede el límite permitido de " + pesoMaximo + " kg.");
+                }
+            } catch (NumberFormatException ex) {
+                // El valor ingresado no es numérico
+                JOptionPane.showMessageDialog(PanelComprador.this, "Ingrese un valor numérico válido para el peso del equipaje extra.");
+            }
+        } else {
+            // Lógica para cuando no se lleva equipaje extra
+            // Por ejemplo, mostrar un mensaje de confirmación de no llevar equipaje extra
+            JOptionPane.showMessageDialog(PanelComprador.this, "No se llevará equipaje extra.");
+        }
+    }
+});
         add(tagTotal);
         add(tagAsientos);
         add(tagTipo);
+        add(equipajeExtraCheckbox);
+        add(confirmarButton);
     }
 
     public void update() {
         tagTotal.setText(String.valueOf(Estado.getTotal()));
         tagAsientos.setText(Estado.getAsiento());
         tagTipo.setText(Estado.getTipo());
+
     }
     public Dimension getPreferredSize(){
         return new Dimension(400,700);
