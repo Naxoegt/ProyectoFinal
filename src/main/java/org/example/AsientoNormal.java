@@ -1,13 +1,13 @@
 package org.example;
 
-public class AsientoNormal {
+class AsientoNormal extends Asiento{
     private int valor = 1000;
     private int tipo = 2;
 
 
     public AsientoNormal() {}
 
-    
+
     public int Valor() {
         return valor;
     }

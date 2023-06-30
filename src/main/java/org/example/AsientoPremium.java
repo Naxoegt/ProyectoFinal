@@ -7,11 +7,9 @@ public class AsientoPremium extends Asiento {
 
     public AsientoPremium() {}
 
-    
     public int Valor() {
         return valor;
     }
-
     public int Tipo() {
         return tipo;
     }

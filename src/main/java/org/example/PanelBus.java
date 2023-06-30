@@ -11,17 +11,17 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 class PanelBus extends JPanel {
-    ListaAsientos listaDeAsientos = new ListaAsientos();
-
+    ListaDeAsientos listaDeAsientos;
     private int rectangleX = 180;
     private int rectangleY = 320;
     private int rectangleWidth = 750;
     private int rectangleHeight = 200;
 
-    public PanelBus() {
+    public PanelBus(Estado Estado) {
         setLayout(null);
 
-        for(JButton asiento : listaDeAsientos.getAsientos()) {
+        listaDeAsientos = new ListaDeAsientos(Estado); // Pass Estado here
+        for(JButton asiento : listaDeAsientos.getAsiento()) {
             add(asiento);
         }
     }

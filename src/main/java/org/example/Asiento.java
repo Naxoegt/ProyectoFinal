@@ -1,6 +1,6 @@
 package org.example;
 
-public class Asiento {
+class Asiento {
     private int valor;
     private int tipo;
     private int numero;
@@ -19,6 +19,10 @@ public class Asiento {
     public int Numero(){
 
         return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
 }
