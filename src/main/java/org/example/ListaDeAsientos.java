@@ -8,19 +8,14 @@ import java.util.List;
 class ListaDeAsientos {
     private List<JButton> asientos = new ArrayList<>();
     private List<Asiento> informacionAsientos = new ArrayList<>();
-    private Estado Estado;
+    private Estado estado;
 
-    public ListaDeAsientos(Estado Estado) {
-        this.Estado = Estado;
+    public ListaDeAsientos(Estado estado) {
+        this.estado = estado;
         int rectangleX = 180;
         int rectangleY = 10;
         for (int i = 0; i < 16; i++) {
-            Asiento asientoInfo;
-            if (i < 8) {
-                asientoInfo = new AsientoPremium();
-            } else {
-                asientoInfo = new AsientoNormal();
-            }
+            Asiento asientoInfo = (i < 8) ? new AsientoPremium() : new AsientoNormal();
             asientoInfo.setNumero(i + 1);
             informacionAsientos.add(asientoInfo);
 
@@ -36,16 +31,16 @@ class ListaDeAsientos {
         button.addActionListener(e -> {
             if (button.getBackground() == Color.GREEN) {
                 button.setBackground(Color.ORANGE);
-                Estado.agregarAsiento(asientoInfo);
+                estado.agregarAsiento(asientoInfo);
             } else {
                 button.setBackground(Color.GREEN);
-                Estado.removerAsiento(asientoInfo);
+                estado.removerAsiento(asientoInfo);
             }
-            SwingUtilities.getWindowAncestor(button).repaint(); // add this line
+            SwingUtilities.getWindowAncestor(button).repaint();
         });
     }
 
-    public void updateSeatValues(String origin, String destination) {
+    public void ActualizarValoresAsientos(String origin, String destination) {
         for (Asiento asiento : informacionAsientos) {
             if (asiento instanceof AsientoNormal) {
                 ((AsientoNormal) asiento).setValor(origin, destination);
@@ -54,7 +49,6 @@ class ListaDeAsientos {
             }
         }
     }
-
 
     public List<JButton> getAsiento() {
         return asientos;

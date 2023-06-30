@@ -17,13 +17,11 @@ class PanelBus extends JPanel {
     private int rectangleWidth = 750;
     private int rectangleHeight = 200;
 
-    public PanelBus(Estado Estado) {
+    public PanelBus(Estado estado) {
         setLayout(null);
 
-        listaDeAsientos = new ListaDeAsientos(Estado); // Pass Estado here
-        for(JButton asiento : listaDeAsientos.getAsiento()) {
-            add(asiento);
-        }
+        listaDeAsientos = new ListaDeAsientos(estado);
+        listaDeAsientos.getAsiento().forEach(this::add);
     }
 
     @Override
@@ -39,9 +37,7 @@ class PanelBus extends JPanel {
         g.fillRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
 
         g.setColor(Color.white);
-        g.drawString("Bus", 550, 430);
-
-        g.setColor(Color.black);
-        Font myFont = new Font("Arial", Font.PLAIN, 20);
+        g.drawString("Bus", 550, 120);
     }
 }
+

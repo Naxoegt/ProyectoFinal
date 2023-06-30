@@ -5,8 +5,6 @@ class Asiento {
     protected int tipo;
     protected int numero;
 
-    public Asiento(){}
-
     public int Valor() {
         return valor;
     }
@@ -15,15 +13,15 @@ class Asiento {
         this.valor = valor;
     }
 
-    public int Tipo(){
+    public int Tipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo){
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
-    public int Numero(){
+    public int Numero() {
         return numero;
     }
 

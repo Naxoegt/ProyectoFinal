@@ -7,30 +7,26 @@ import java.awt.*;
 
 class Ventana extends JFrame {
     public Ventana() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel containerPanel = new JPanel();
-        containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.X_AXIS));
-
-        Estado Estado = new Estado();
-
-        PanelComprador panelComprador = new PanelComprador(Estado);
-        Estado.addObserver(panelComprador);
-        PanelBus panelBus = new PanelBus(Estado);
+        Estado estado = new Estado();
+        PanelComprador panelComprador = new PanelComprador(estado);
+        estado.addObservador(panelComprador);
+        PanelBus panelBus = new PanelBus(estado);
         PanelInformacion panelInformacion = new PanelInformacion(panelBus.listaDeAsientos);
 
-        JPanel nestedPanel = new JPanel();
-        nestedPanel.setLayout(new BorderLayout());
-
+        JPanel nestedPanel = new JPanel(new BorderLayout());
         nestedPanel.add(panelInformacion, BorderLayout.NORTH);
         nestedPanel.add(panelBus, BorderLayout.CENTER);
 
+        JPanel containerPanel = new JPanel();
+        containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.X_AXIS));
         containerPanel.add(nestedPanel);
         containerPanel.add(panelComprador);
 
-        this.add(containerPanel);
+        add(containerPanel);
 
-        this.pack(); // make the frame fit to preferred size of all components
-        this.setVisible(true);
+        pack();
+        setVisible(true);
     }
 }

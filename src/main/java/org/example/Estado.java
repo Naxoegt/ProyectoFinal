@@ -6,34 +6,44 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Estado extends Observador {
-    private List<Asiento> selectedSeats = new ArrayList<>();
+class Estado {
+    private List<Asiento> asientosSeleccionados = new ArrayList<>();
+
+    private List<Observador> Observadors = new ArrayList<>();
+
+    public void addObservador(Observador Observador) {
+        Observadors.add(Observador);
+    }
+
+    public void removeObservador(Observador Observador) {
+        Observadors.remove(Observador);
+    }
+
+    public void notifyObservadors() {
+        Observadors.forEach(Observador::update);
+    }
 
     public void agregarAsiento(Asiento seat) {
-        selectedSeats.add(seat);
-        NotificarObservadores();
+        asientosSeleccionados.add(seat);
+        notifyObservadors();
     }
 
     public void removerAsiento(Asiento seat) {
-        selectedSeats.remove(seat);
-        NotificarObservadores();
+        asientosSeleccionados.remove(seat);
+        notifyObservadors();
     }
 
     public int getTotal() {
-        return selectedSeats.stream().mapToInt(Asiento::Valor).sum();
+        return asientosSeleccionados.stream().mapToInt(Asiento::Valor).sum();
     }
 
     public String getAsiento() {
-        return selectedSeats.stream().map(asiento -> Integer.toString(asiento.Numero())).collect(Collectors.joining(", "));
+        return asientosSeleccionados.stream().map(asiento -> String.valueOf(asiento.Numero())).collect(Collectors.joining(", "));
     }
 
     public String getTipo() {
-        int normalAsientos = (int) selectedSeats.stream()
-                .filter(asiento -> asiento instanceof AsientoNormal)
-                .count();
-        int premiumAsientos = (int) selectedSeats.stream()
-                .filter(asiento -> asiento instanceof AsientoPremium)
-                .count();
+        int normalAsientos = (int) asientosSeleccionados.stream().filter(asiento -> asiento instanceof AsientoNormal).count();
+        int premiumAsientos = (int) asientosSeleccionados.stream().filter(asiento -> asiento instanceof AsientoPremium).count();
 
         return "Normal x " + normalAsientos + ", Premium x " + premiumAsientos;
     }
