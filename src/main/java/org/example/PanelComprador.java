@@ -13,6 +13,8 @@ class PanelComprador extends JPanel implements Observer {
     private JLabel tagTipo;
     private JCheckBox equipajeExtraCheckbox;
     private JButton confirmarButton;
+     private JButton finalizarButton;
+    
 
     public PanelComprador(Estado Estado){
         this.Estado = Estado;
@@ -21,6 +23,7 @@ class PanelComprador extends JPanel implements Observer {
         tagTipo = new JLabel();
         equipajeExtraCheckbox = new JCheckBox("Equipaje Extra");
         confirmarButton = new JButton("Confirmar");
+        finalizarButton = new JButton("Finalizar Compra");
 
         setLayout(null);
 
@@ -29,6 +32,7 @@ class PanelComprador extends JPanel implements Observer {
         tagTipo.setBounds(150, 430, 200, 20);
         equipajeExtraCheckbox.setBounds(150, 480, 150, 20);
         confirmarButton.setBounds(150, 530, 100, 30);
+        finalizarButton.setBounds(150, 630, 150, 30);
         
         confirmarButton.addActionListener(new ActionListener() {
     @Override
@@ -58,11 +62,19 @@ class PanelComprador extends JPanel implements Observer {
         }
     }
 });
+     finalizarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int precioTotal = Estado.getTotal();
+                JOptionPane.showMessageDialog(PanelComprador.this, "Precio Total: $" + precioTotal + "\n¡Muchas gracias por su compra!");
+            }
+        });
         add(tagTotal);
         add(tagAsientos);
         add(tagTipo);
         add(equipajeExtraCheckbox);
         add(confirmarButton);
+        add(finalizarButton);
     }
 
     public void update() {
