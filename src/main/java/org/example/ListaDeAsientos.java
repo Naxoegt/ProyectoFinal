@@ -45,6 +45,16 @@ class ListaDeAsientos {
         });
     }
 
+    public void updateSeatValues(String origin, String destination) {
+        for (Asiento asiento : informacionAsientos) {
+            if (asiento instanceof AsientoNormal) {
+                ((AsientoNormal) asiento).setValor(origin, destination);
+            } else {
+                ((AsientoPremium) asiento).setValor(origin, destination);
+            }
+        }
+    }
+
 
     public List<JButton> getAsiento() {
         return asientos;

@@ -5,12 +5,16 @@ import java.awt.*;
 import javax.swing.*;
 
 class PanelInformacion extends JPanel {
+    private String origin = "";
+    private String destination = "";
+    private ListaDeAsientos listaDeAsientos;
 
     private int column1X = 200; // posicion X de columna "desde"
     private int column2X = 520; // posicion X de columna "A"
     private int startY = 180; // posicion Y de ambas columnas
 
-    public PanelInformacion() {
+    public PanelInformacion(ListaDeAsientos listaDeAsientos) {
+        this.listaDeAsientos = listaDeAsientos;
         setLayout(null);
 
         ButtonGroup buttonGroup1 = new ButtonGroup();
@@ -20,6 +24,7 @@ class PanelInformacion extends JPanel {
         for (int i = 0; i < Destinos.length; i++) {
             int columnX = (i < 4) ? column1X : column2X;
             int rowY = startY + (i % 4) * 30;
+
 
             JRadioButton radioButton = new JRadioButton(Destinos[i].getText());
             radioButton.setBounds(columnX, rowY, 100, 20);
@@ -32,7 +37,17 @@ class PanelInformacion extends JPanel {
             } else {
                 buttonGroup2.add(radioButton);
             }
-
+            int finalI = i;
+            radioButton.addActionListener(e -> {
+                if (finalI < 4) {
+                    origin = Destinos[finalI].getText();
+                } else {
+                    destination = Destinos[finalI].getText();
+                }
+                if (!origin.isEmpty() && !destination.isEmpty()) {
+                    listaDeAsientos.updateSeatValues(origin, destination);
+                }
+            });
             add(radioButton);
         }
     }

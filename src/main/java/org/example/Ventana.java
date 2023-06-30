@@ -17,7 +17,7 @@ class Ventana extends JFrame {
         PanelComprador panelComprador = new PanelComprador(Estado);
         Estado.addObserver(panelComprador);
         PanelBus panelBus = new PanelBus(Estado);
-        PanelInformacion panelInformacion = new PanelInformacion();
+        PanelInformacion panelInformacion = new PanelInformacion(panelBus.listaDeAsientos);
 
         JPanel nestedPanel = new JPanel();
         nestedPanel.setLayout(new BorderLayout());

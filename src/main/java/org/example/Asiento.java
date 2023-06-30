@@ -1,9 +1,9 @@
 package org.example;
 
 class Asiento {
-    private int valor;
-    private int tipo;
-    private int numero;
+    protected int valor;
+    protected int tipo;
+    protected int numero;
 
     public Asiento(){}
 
@@ -11,18 +11,23 @@ class Asiento {
         return valor;
     }
 
-    public int Tipo(){
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
 
+    public int Tipo(){
         return tipo;
     }
 
-    public int Numero(){
+    public void setTipo(int tipo){
+        this.tipo = tipo;
+    }
 
+    public int Numero(){
         return numero;
     }
 
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
 }
