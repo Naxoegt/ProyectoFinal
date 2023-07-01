@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListaDeAsientos {
+public class ListaDeAsientos {
     private List<JButton> asientos = new ArrayList<>();
     private List<Asiento> informacionAsientos = new ArrayList<>();
     private Estado estado;

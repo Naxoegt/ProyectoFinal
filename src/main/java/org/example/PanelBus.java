@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-class PanelBus extends JPanel {
+public class PanelBus extends JPanel {
     ListaDeAsientos listaDeAsientos;
     private int rectangleX = 180;
     private int rectangleY = 10;

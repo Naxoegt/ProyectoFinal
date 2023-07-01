@@ -1,6 +1,6 @@
 package org.example;
 
-class AsientoNormal extends Asiento {
+public class AsientoNormal extends Asiento {
     private int valor = 1000;
     private int tipo = 2;
 

@@ -6,11 +6,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-class PanelComprador extends JPanel implements Observador {
+public class PanelComprador extends JPanel implements Observador {
     private Estado estado;
-    private JLabel tagTotal;
-    private JLabel tagAsientos;
-    private JLabel tagTipo;
+    public JLabel tagTotal;
+    public JLabel tagAsientos;
+    public JLabel tagTipo;
     private JCheckBox equipajeExtraCheckbox;
     private JButton confirmarButton;
     private JButton finalizarButton;

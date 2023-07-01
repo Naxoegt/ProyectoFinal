@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Estado {
+public class Estado {
     private List<Asiento> asientosSeleccionados = new ArrayList<>();
 
     private List<Observador> Observadors = new ArrayList<>();

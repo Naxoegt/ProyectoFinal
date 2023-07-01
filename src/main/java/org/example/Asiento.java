@@ -1,6 +1,6 @@
 package org.example;
 
-class Asiento {
+public class Asiento {
     protected int valor;
     protected int tipo;
     protected int numero;

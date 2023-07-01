@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
-class PanelInformacion extends JPanel {
+public class PanelInformacion extends JPanel {
     private String origin = "";
     private String destination = "";
     private ListaDeAsientos listaDeAsientos;
@@ -67,8 +67,8 @@ class PanelInformacion extends JPanel {
         g.setColor(Color.black);
         g.drawString("Detalles de Compra", 130, 100);
         g.setColor(Color.black);
-        g.drawString("Desde:", 170, 150);
+        g.drawString("Origen:", 170, 150);
         g.setColor(Color.black);
-        g.drawString("A:", 490, 150);
+        g.drawString("Destino:", 490, 150);
     }
 }

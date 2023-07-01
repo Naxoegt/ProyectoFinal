@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.*;
 
-class Ventana extends JFrame {
+public class Ventana extends JFrame {
     public Ventana() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
