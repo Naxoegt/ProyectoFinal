@@ -82,10 +82,23 @@ class PanelInformacion extends JPanel {
         g.fillRect(100, 50, 1000, 500);
 
         g.setColor(Color.black);
-        g.drawString("Detalles de Compra", 130, 100);
+        g.drawString("Por favor, seleccione su itinerario", 130, 100);
         g.setColor(Color.black);
-        g.drawString("Desde:", 170, 150);
+        g.drawString("Origen:", 170, 150);
         g.setColor(Color.black);
-        g.drawString("A:", 490, 150);
+        g.drawString("Destino:", 490, 150);
+        g.setColor(Color.black);
+        g.drawString("Precios:", 130, 350);
+        g.drawString("* Concepcion/Puerto Varas: Normal = $4000, Premium: $5000", 170, 380);
+        g.setColor(Color.black);
+        g.drawString("* Concepcion/Valdivia: Normal = $2000, Premium: $3000", 170, 400);
+        g.setColor(Color.black);
+        g.drawString("* Concepcion/Osorno: Normal = $3000, Premium: $4000", 170, 420);
+        g.setColor(Color.black);
+        g.drawString("* Puerto Varas/Valdivia: Normal = $2500, Premium: $3500", 170, 440);
+        g.setColor(Color.black);
+        g.drawString("* Puerto Varas/Osorno: Normal = $1000, Premium: $2000", 170, 460);
+        g.setColor(Color.black);
+        g.drawString("* Valdivia/Osorno: Normal = $2000, Premium: $3000", 170, 480);
     }
 }
