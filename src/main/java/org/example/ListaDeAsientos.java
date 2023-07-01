@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaDeAsientos {
+class ListaDeAsientos {
     private List<JButton> asientos = new ArrayList<>();
     private List<Asiento> informacionAsientos = new ArrayList<>();
     private Estado estado;
@@ -40,12 +40,12 @@ public class ListaDeAsientos {
         });
     }
 
-    public void ActualizarValoresAsientos(String origin, String destination) {
+    public void ActualizarValoresAsientos(String origen, String destino) {
         for (Asiento asiento : informacionAsientos) {
             if (asiento instanceof AsientoNormal) {
-                ((AsientoNormal) asiento).setValor(origin, destination);
+                ((AsientoNormal) asiento).setValor(origen, destino);
             } else {
-                ((AsientoPremium) asiento).setValor(origin, destination);
+                ((AsientoPremium) asiento).setValor(origen, destino);
             }
         }
     }

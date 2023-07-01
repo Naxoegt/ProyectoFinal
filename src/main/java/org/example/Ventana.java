@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class Ventana extends JFrame {
+class Ventana extends JFrame {
     public Ventana() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -13,7 +13,7 @@ public class Ventana extends JFrame {
         PanelComprador panelComprador = new PanelComprador(estado);
         estado.addObservador(panelComprador);
         PanelBus panelBus = new PanelBus(estado);
-        PanelInformacion panelInformacion = new PanelInformacion(panelBus.listaDeAsientos);
+        PanelInformacion panelInformacion = new PanelInformacion(panelBus.listaDeAsientos, estado);
 
         JPanel nestedPanel = new JPanel(new BorderLayout());
         nestedPanel.add(panelInformacion, BorderLayout.NORTH);

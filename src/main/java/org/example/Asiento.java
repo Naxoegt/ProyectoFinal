@@ -1,6 +1,7 @@
 package org.example;
 
-public class Asiento {
+class Asiento {
+    protected boolean reserved = false;
     protected int valor;
     protected int tipo;
     protected int numero;
@@ -27,5 +28,13 @@ public class Asiento {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

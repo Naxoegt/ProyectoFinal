@@ -1,7 +1,7 @@
 package org.example;
 
-public class AsientoPremium extends Asiento {
-    private int valor = 2000;
+class AsientoPremium extends Asiento {
+    private int valor;
     private int tipo = 1;
 
     public int Valor() {
@@ -25,8 +25,7 @@ public class AsientoPremium extends Asiento {
             valor = 2000;
         } else if ((origen.equals("Valdivia") && destino.equals("Osorno")) || (origen.equals("Osorno") && destino.equals("Valdivia"))) {
             valor = 3000;
-        }
-        else {
+        } else {
             valor = 0;
         }
     }

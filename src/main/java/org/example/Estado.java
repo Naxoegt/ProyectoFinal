@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Estado {
+class Estado {
+    private String origen = "";
+    private String destino = "";
+
     private List<Asiento> asientosSeleccionados = new ArrayList<>();
 
     private List<Observador> Observadors = new ArrayList<>();
@@ -46,5 +49,21 @@ public class Estado {
         int premiumAsientos = (int) asientosSeleccionados.stream().filter(asiento -> asiento instanceof AsientoPremium).count();
 
         return "Normal x " + normalAsientos + ", Premium x " + premiumAsientos;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 }

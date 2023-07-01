@@ -1,6 +1,6 @@
 package org.example;
 
-public enum Destino {
+enum Destino {
     desde_Conce("Concepcion"),
     desde_PV("Puerto Varas"),
     desde_Valdi("Valdivia"),

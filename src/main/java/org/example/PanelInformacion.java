@@ -4,17 +4,19 @@ import java.awt.*;
 
 import javax.swing.*;
 
-public class PanelInformacion extends JPanel {
-    private String origin = "";
-    private String destination = "";
+class PanelInformacion extends JPanel {
+    private String origen = "";
+    private String destino = "";
     private ListaDeAsientos listaDeAsientos;
+    private Estado estado;
 
     private int column1X = 200;
     private int column2X = 520;
     private int startY = 180;
 
-    public PanelInformacion(ListaDeAsientos listaDeAsientos) {
+    public PanelInformacion(ListaDeAsientos listaDeAsientos, Estado estado) {
         this.listaDeAsientos = listaDeAsientos;
+        this.estado = estado;
         setLayout(null);
 
         ButtonGroup buttonGroup1 = new ButtonGroup();
@@ -40,12 +42,15 @@ public class PanelInformacion extends JPanel {
             int finalI = i;
             radioButton.addActionListener(e -> {
                 if (finalI < 4) {
-                    origin = destinos[finalI].getText();
+                    origen = destinos[finalI].getText();
+                    estado.setOrigen(origen); // Set the selected origen in the Estado object
                 } else {
-                    destination = destinos[finalI].getText();
+                    destino = destinos[finalI].getText();
+                    estado.setDestino(destino); // Set the selected destino in the Estado object
                 }
-                if (!origin.isEmpty() && !destination.isEmpty()) {
-                    listaDeAsientos.ActualizarValoresAsientos(origin, destination);
+
+                if (!origen.isEmpty() && !destino.isEmpty()) {
+                    listaDeAsientos.ActualizarValoresAsientos(origen, destino);
                 }
             });
 
@@ -67,8 +72,8 @@ public class PanelInformacion extends JPanel {
         g.setColor(Color.black);
         g.drawString("Detalles de Compra", 130, 100);
         g.setColor(Color.black);
-        g.drawString("Origen:", 170, 150);
+        g.drawString("Desde:", 170, 150);
         g.setColor(Color.black);
-        g.drawString("Destino:", 490, 150);
+        g.drawString("A:", 490, 150);
     }
 }

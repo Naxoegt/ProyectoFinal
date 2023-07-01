@@ -6,9 +6,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class PanelComprador extends JPanel implements Observador {
+class PanelComprador extends JPanel implements Observador {
+    private JLabel tagDestino;
     private Estado estado;
-    public JLabel tagTotal;
+    private JLabel tagTotal;
     public JLabel tagAsientos;
     public JLabel tagTipo;
     private JCheckBox equipajeExtraCheckbox;
@@ -20,6 +21,7 @@ public class PanelComprador extends JPanel implements Observador {
         tagTotal = new JLabel();
         tagAsientos = new JLabel();
         tagTipo = new JLabel();
+        tagDestino = new JLabel();
         equipajeExtraCheckbox = new JCheckBox("Equipaje Extra");
         confirmarButton = new JButton("Confirmar");
         finalizarButton = new JButton("Finalizar Compra");
@@ -30,6 +32,7 @@ public class PanelComprador extends JPanel implements Observador {
         tagTotal.setBounds(x, 580, 200, 20);
         tagAsientos.setBounds(x, 380, 200, 20);
         tagTipo.setBounds(x, 430, 200, 20);
+        tagDestino.setBounds(x, 300, 200, 20);
         equipajeExtraCheckbox.setBounds(x, 480, 150, 20);
         confirmarButton.setBounds(x, 530, 100, 30);
         finalizarButton.setBounds(x, 630, 150, 30);
@@ -62,9 +65,11 @@ public class PanelComprador extends JPanel implements Observador {
             }
         });
 
+
         add(tagTotal);
         add(tagAsientos);
         add(tagTipo);
+        add(tagDestino);
         add(equipajeExtraCheckbox);
         add(confirmarButton);
         add(finalizarButton);
@@ -74,6 +79,7 @@ public class PanelComprador extends JPanel implements Observador {
         tagTotal.setText(String.valueOf(estado.getTotal()));
         tagAsientos.setText(estado.getAsiento());
         tagTipo.setText(estado.getTipo());
+        tagDestino.setText(estado.getDestino());
     }
 
     @Override
