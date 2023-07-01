@@ -67,7 +67,7 @@ class ListaDeAsientosTest {
         // Update the prices based on the origin and destination
         listaDeAsientos.ActualizarValoresAsientos(origin, destination);
 
-        // Check that the price for all seats is 0
+        // Check that the price for all asientos is 0
         listaDeAsientos.getInformacionAsientos().forEach(asiento -> assertEquals(0, asiento.Valor()));
     }
 
@@ -84,7 +84,7 @@ class ListaDeAsientosTest {
         // Update the prices based on the origin and destination
         listaDeAsientos.ActualizarValoresAsientos(origin, destination);
 
-        // Check that the price for all seats is 0
+        // Check that the price for all asientos is 0
         listaDeAsientos.getInformacionAsientos().forEach(asiento -> assertEquals(0, asiento.Valor()));
     }
 
@@ -101,7 +101,7 @@ class ListaDeAsientosTest {
         // Update the prices based on the origin and destination
         listaDeAsientos.ActualizarValoresAsientos(origin, destination);
 
-        // Check that the price for all seats is 0
+        // Check that the price for all asientos is 0
         listaDeAsientos.getInformacionAsientos().forEach(asiento -> assertEquals(0, asiento.Valor()));
     }
 
@@ -118,7 +118,7 @@ class ListaDeAsientosTest {
         // Update the prices based on the origin and destination
         listaDeAsientos.ActualizarValoresAsientos(origin, destination);
 
-        // Check that the price for all seats is 0
+        // Check that the price for all asientos is 0
         listaDeAsientos.getInformacionAsientos().forEach(asiento -> assertEquals(0, asiento.Valor()));
     }
 }

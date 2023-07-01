@@ -1,5 +1,8 @@
 package org.example;
-
+/**
+ * La clase AsientoPremium es una subclase de Asiento que representa un asiento premium en un bus.
+ * Hereda los atributos y métodos de la clase Asiento.
+ */
 class AsientoPremium extends Asiento {
     private int valor;
     private int tipo = 1;
@@ -12,6 +15,11 @@ class AsientoPremium extends Asiento {
         return tipo;
     }
 
+    /**
+     * Establece el valor del asiento premium basado en el origen y destino especificados.
+     * @param origen  El origen del viaje.
+     * @param destino El destino del viaje.
+     */
     public void setValor(String origen, String destino) {
         if ((origen.equals("Concepcion") && destino.equals("Puerto Varas")) || (origen.equals("Puerto Varas") && destino.equals("Concepcion"))) {
             valor = 5000;

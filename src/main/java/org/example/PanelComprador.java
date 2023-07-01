@@ -5,7 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-
+/**
+ * Clase que representa un panel que muestra los detalles de compra y permite al usuario
+ * confirmar y finalizar la compra.
+ */
 class PanelComprador extends JPanel implements Observador {
     private JLabel tagDestino;
     private Estado estado;
@@ -16,6 +19,10 @@ class PanelComprador extends JPanel implements Observador {
     private JButton confirmarButton;
     private JButton finalizarButton;
 
+    /**
+     * Crea un nuevo PanelComprador con el estado proporcionado y configura el diseño del panel.
+     * @param estado El estado actual del sistema.
+     */
     public PanelComprador(Estado estado) {
         this.estado = estado;
         tagTotal = new JLabel();
@@ -28,6 +35,7 @@ class PanelComprador extends JPanel implements Observador {
 
         setLayout(null);
 
+        // Configuración de la posición y tamaño de los componentes del panel
         int x = 150;
         tagTotal.setBounds(x, 580, 200, 20);
         tagAsientos.setBounds(x, 380, 200, 20);
@@ -65,7 +73,7 @@ class PanelComprador extends JPanel implements Observador {
             }
         });
 
-
+        // se agregan los componentes al panel
         add(tagTotal);
         add(tagAsientos);
         add(tagTipo);
@@ -75,6 +83,9 @@ class PanelComprador extends JPanel implements Observador {
         add(finalizarButton);
     }
 
+    /**
+     * Actualiza los componentes del panel con la información actual del estado.
+     */
     public void update() {
         tagTotal.setText(String.valueOf(estado.getTotal()));
         tagAsientos.setText(estado.getAsiento());

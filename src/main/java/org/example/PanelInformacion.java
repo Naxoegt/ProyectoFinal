@@ -3,7 +3,10 @@ package org.example;
 import java.awt.*;
 
 import javax.swing.*;
-
+/**
+ * Clase que representa un panel que muestra información sobre el itinerario de viaje,
+ * incluyendo el origen, destino y la lista de asientos disponibles.
+ */
 class PanelInformacion extends JPanel {
     private String origen = "";
     private String destino = "";
@@ -13,7 +16,12 @@ class PanelInformacion extends JPanel {
     private int column1X = 200;
     private int column2X = 520;
     private int startY = 180;
-
+    /**
+     * Crea un nuevo PanelInformacion con la lista de asientos y el estado proporcionados, y configura
+     * el diseño del panel.
+     * @param listaDeAsientos La lista de asientos disponibles.
+     * @param estado          El estado actual del sistema.
+     */
     public PanelInformacion(ListaDeAsientos listaDeAsientos, Estado estado) {
         this.listaDeAsientos = listaDeAsientos;
         this.estado = estado;
@@ -43,10 +51,10 @@ class PanelInformacion extends JPanel {
             radioButton.addActionListener(e -> {
                 if (finalI < 4) {
                     origen = destinos[finalI].getText();
-                    estado.setOrigen(origen); // Set the selected origen in the Estado object
+                    estado.setOrigen(origen);
                 } else {
                     destino = destinos[finalI].getText();
-                    estado.setDestino(destino); // Set the selected destino in the Estado object
+                    estado.setDestino(destino);
                 }
 
                 if (!origen.isEmpty() && !destino.isEmpty()) {

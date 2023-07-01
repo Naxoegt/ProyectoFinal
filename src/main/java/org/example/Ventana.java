@@ -4,7 +4,10 @@ import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.*;
-
+/**
+ * Clase que representa la ventana principal de la aplicación. Contiene un panel de bus, un panel
+ * de información y un panel de comprador.
+ */
 class Ventana extends JFrame {
     public Ventana() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

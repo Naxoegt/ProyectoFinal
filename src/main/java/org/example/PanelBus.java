@@ -9,7 +9,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
+/**
+ * Clase que representa un panel que muestra un gráfico de un bus y los asientos disponibles.
+ */
 class PanelBus extends JPanel {
     ListaDeAsientos listaDeAsientos;
     private int rectangleX = 180;
@@ -17,6 +19,10 @@ class PanelBus extends JPanel {
     private int rectangleWidth = 750;
     private int rectangleHeight = 200;
 
+    /**
+     * Crea un nuevo PanelBus con el estado proporcionado y configura el diseño del panel.
+     * @param estado El estado actual del sistema.
+     */
     public PanelBus(Estado estado) {
         setLayout(null);
 
