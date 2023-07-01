@@ -55,7 +55,11 @@ class PanelComprador extends JPanel implements Observador {
 
         finalizarButton.addActionListener(e -> {
             int precioTotal = estado.getTotal();
-            JOptionPane.showMessageDialog(this, "Precio Total: $" + precioTotal + "\n¡Muchas gracias por su compra!");
+            if (precioTotal == 0) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese un itinerario válido");
+            } else {
+                JOptionPane.showMessageDialog(this, "Precio Total: $" + precioTotal + "\n¡Muchas gracias por su compra!");
+            }
         });
 
         add(tagTotal);

@@ -26,5 +26,8 @@ class AsientoPremium extends Asiento {
         } else if ((origen.equals("Valdivia") && destino.equals("Osorno")) || (origen.equals("Osorno") && destino.equals("Valdivia"))) {
             valor = 3000;
         }
+        else {
+            valor = 0;
+        }
     }
 }
