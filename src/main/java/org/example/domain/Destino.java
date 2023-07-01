@@ -1,9 +1,9 @@
-package org.example;
+package org.example.domain;
 
 /**
  * Enum que define los posibles destinos y origenes de un viaje en el sistema.
  */
-enum Destino {
+public enum Destino {
     desde_Conce("Concepcion"),
     desde_PV("Puerto Varas"),
     desde_Valdi("Valdivia"),

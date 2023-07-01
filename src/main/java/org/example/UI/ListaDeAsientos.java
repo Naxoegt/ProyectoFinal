@@ -1,4 +1,9 @@
-package org.example;
+package org.example.UI;
+
+import org.example.domain.Asiento;
+import org.example.domain.AsientoNormal;
+import org.example.domain.AsientoPremium;
+import org.example.domain.Estado;
 
 import javax.swing.*;
 import java.awt.*;

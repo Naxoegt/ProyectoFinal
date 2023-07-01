@@ -1,4 +1,6 @@
-package org.example;
+package org.example.UI;
+import org.example.UI.Ventana;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

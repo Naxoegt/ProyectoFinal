@@ -1,8 +1,9 @@
-package org.example;
+package org.example.UI;
+
+import org.example.domain.Estado;
+import org.example.observer.Observador;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 /**

@@ -1,9 +1,9 @@
-package org.example;
+package org.example.domain;
 /**
  * La clase Asiento representa un asiento en un bus.
  * Contiene información sobre el estado de reserva, valor, tipo y número del asiento.
  */
-class Asiento {
+public class Asiento {
     protected boolean reserved = false;
 
     protected int valor;

@@ -1,4 +1,8 @@
-package org.example;
+package org.example.UI;
+
+import org.example.domain.Destino;
+import org.example.domain.Estado;
+import org.example.UI.ListaDeAsientos;
 
 import java.awt.*;
 

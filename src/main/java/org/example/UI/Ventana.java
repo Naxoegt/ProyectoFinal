@@ -1,4 +1,9 @@
-package org.example;
+package org.example.UI;
+
+import org.example.domain.Estado;
+import org.example.UI.PanelBus;
+import org.example.UI.PanelComprador;
+import org.example.UI.PanelInformacion;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;

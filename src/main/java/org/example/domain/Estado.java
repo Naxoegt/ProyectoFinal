@@ -1,7 +1,10 @@
-package org.example;
+package org.example.domain;
 
-import javax.swing.*;
-import java.awt.*;
+import org.example.domain.Asiento;
+import org.example.domain.AsientoNormal;
+import org.example.domain.AsientoPremium;
+import org.example.observer.Observador;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,7 +13,7 @@ import java.util.stream.Collectors;
  * Contiene información sobre el origen, destino y los asientos seleccionados.
  * También gestiona una lista de observadores que deben actualizarse cuando el estado cambia.
  */
-class Estado {
+public class Estado {
     private String origen = "";
     private String destino = "";
 

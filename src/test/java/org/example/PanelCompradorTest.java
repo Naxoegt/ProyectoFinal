@@ -1,4 +1,9 @@
 package org.example;
+import org.example.UI.PanelComprador;
+import org.example.domain.Asiento;
+import org.example.domain.AsientoNormal;
+import org.example.domain.AsientoPremium;
+import org.example.domain.Estado;
 import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.DisplayName;
